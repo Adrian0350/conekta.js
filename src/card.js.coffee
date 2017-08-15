@@ -108,7 +108,7 @@ Conekta.card.getBrand = (number)->
   null
 
 Conekta.card.validateCVC = (cvc)->
-  (typeof cvc == 'number' and cvc >=0 and cvc < 10000) or (typeof cvc == 'string' and cvc.match(/^[\d]{3,4}$/) != null)
+  (cvc = ('' + cvc)) and (typeof cvc == 'string' and cvc.match(/^[\d]{3,4}$/) != null)
 
 Conekta.card.validateExpMonth = (exp_month)->
   month = parseMonth(exp_month)
